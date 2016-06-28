@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="385dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_pw_rb"></RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@mipmap/newuser_redbag_title"
+        android:gravity="center_horizontal"
+        android:text="恭喜您，获得1000U币"
+        android:textColor="#ffffff"
+        android:textSize="19sp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_newman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/shape_text_newman"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="获得新人专享1000U币红包"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="合计一元人民币"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="仅需一步红包就稳稳地落入你的腰包!"
+            android:textColor="#ffffff"
+            android:textSize="14.5sp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/rb"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/ll_newman"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/newuser_redbag"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_newman"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="1000"
+        android:textStyle="bold"
+        android:textColor="#FF0000"
+        android:textSize="27sp"
+        />
+
+    <Button
+        android:id="@+id/btn_startregister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rb"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/sel_btn_startregister"
+        android:text="立即注册"
+        android:textColor="#bbff0000"
+        android:textSize="26sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_startlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_startregister"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:text="已有账号，立即登录！"
+        android:textColor="#99000000"
+        android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/tv_startlogin"
+            android:layout_marginLeft="115dp"
+            android:layout_marginRight="115dp"
+            android:layout_marginTop="5dp"
+            android:background="#55000000"
+            />
+
+</RelativeLayout>

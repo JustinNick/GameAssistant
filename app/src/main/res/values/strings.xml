@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GameAssistant</string>
+    <string name="agreetext"><a href="https://baidu.com">注册协议</a></string>
+</resources>
