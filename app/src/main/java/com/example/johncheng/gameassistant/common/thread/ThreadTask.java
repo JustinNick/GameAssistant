@@ -1,4 +1,4 @@
-/*
+package com.example.johncheng.gameassistant.common.thread;/*
  * File Name：ThreadTask.java
  * Copyright：Copyright 2008-2015 CiWong.Inc. All Rights Reserved.
  * Description： ThreadTask.java
@@ -6,7 +6,7 @@
  * Modify Date：2015年3月21日
  * Modify Type：Add
  */
-package com.example.zhouyi.gameassistant.common.thread;
+
 
 import java.util.Comparator;
 import java.util.concurrent.PriorityBlockingQueue;

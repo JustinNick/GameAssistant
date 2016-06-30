@@ -5,6 +5,6 @@ package com.example.johncheng.gameassistant.base;
  */
 public interface ListviewCallback {
 
-    public void updateListview(Object object);
+    void updateListview(Object object);
 
 }

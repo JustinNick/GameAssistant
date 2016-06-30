@@ -146,7 +146,11 @@ public class WelcomeActivity extends BaseActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                startActivity(new Intent(WelcomeActivity.this, RBActivity.class));
+                if (SystemUtil.getSharedBoolean(Constant.LOGIN_FLAG,false)){
+                    startActivity(new Intent(WelcomeActivity.this,MainActivity.class));
+                }else{
+                    startActivity(new Intent(WelcomeActivity.this, RBActivity.class));
+                }
                 finish();
             }
 

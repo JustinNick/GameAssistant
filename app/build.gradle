@@ -27,4 +27,5 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile files('libs/tools.jar')
     compile files('libs/ECTranslation1.3.jar')
+    compile 'com.google.code.gson:gson:2.7'
 }

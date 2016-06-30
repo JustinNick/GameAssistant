@@ -23,15 +23,18 @@ public abstract class BaseFragment extends Fragment{
         loadData();
         return view;
     }
-
-    protected abstract void loadData();
-
-    protected abstract void initEvents();
-
-    protected abstract void init();
+    protected abstract int setViewId();
 
     protected abstract void findViews(View view);
 
-    protected abstract int setViewId();
-    
+    protected abstract void init();
+
+    protected abstract void initEvents();
+
+    protected abstract void loadData();
+
+
+
+
+
 }

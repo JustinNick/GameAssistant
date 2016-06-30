@@ -144,9 +144,9 @@ public class ViewHolder
      * @param viewId
      * @return
      */
-//    public ViewHolder setImageByUrl(int viewId, String url,Context context)
-//    {
-//       ImageView iv = getView(viewId);
+   public ViewHolder setImageByUrl(int viewId, String url,Context context)
+    {
+      ImageView iv = getView(viewId);
 //        DisplayImageOptions options = new DisplayImageOptions.Builder()
 //                .showImageOnLoading(R.mipmap.ic_launcher)
 //                .showImageOnFail(R.mipmap.ic_launcher)
@@ -170,11 +170,11 @@ public class ViewHolder
 //                        VolleyManager.getInstance().getImageCache()));
 //
 //
-//        Picasso.with(context).load(url).into(iv);
-//
-//
-//        return this;
-//    }
+        Picasso.with(context).load(url).into(iv);
+
+
+        return this;
+    }
 
     /**
      * 给view设置背景色
