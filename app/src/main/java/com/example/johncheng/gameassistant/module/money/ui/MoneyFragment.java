@@ -1,5 +1,6 @@
 package com.example.johncheng.gameassistant.module.money.ui;
 
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.johncheng.gameassistant.common.adapter.CommonAdapter;
 import com.example.johncheng.gameassistant.common.adapter.ViewHolder;
 import com.example.johncheng.gameassistant.module.money.bean.TaskGameInfo;
 import com.example.johncheng.gameassistant.module.money.dao.MoneyDao;
+import com.example.johncheng.gameassistant.module.mygame.ui.MygameActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,7 @@ import java.util.List;
 /**
  * Created by johncheng on 2016/6/29.
  */
-public class MoneyFragment extends BaseFragment {
+public class MoneyFragment extends BaseFragment implements View.OnClickListener {
 
     private boolean mbLoad;
     private PopupWindow mpwLoad;
@@ -30,6 +32,7 @@ public class MoneyFragment extends BaseFragment {
     private ListView mlvTaskGame;
     private ArrayList<TaskGameInfo.InfoBean> mListGame;
     private CommonAdapter<TaskGameInfo.InfoBean> mAdapter;
+    private View headView;
 
     public void showLoadDialog(){
         if (!mbLoad&&(mpwLoad==null)){
@@ -54,7 +57,7 @@ public class MoneyFragment extends BaseFragment {
     @Override
     protected void init() {
         mviewPW = LayoutInflater.from(this.getActivity()).inflate(R.layout.layout_pw_money, null);
-        View headView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_task_header,null);
+        headView = LayoutInflater.from(getActivity()).inflate(R.layout.layout_task_header,null);
         mlvTaskGame.addHeaderView(headView);
 
         mListGame = new ArrayList<>();
@@ -74,7 +77,7 @@ public class MoneyFragment extends BaseFragment {
 
     @Override
     protected void initEvents() {
-
+        headView.setOnClickListener(this);
     }
 
     @Override
@@ -93,5 +96,10 @@ public class MoneyFragment extends BaseFragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent("tianzhundaoMygameactivity"));
     }
 }

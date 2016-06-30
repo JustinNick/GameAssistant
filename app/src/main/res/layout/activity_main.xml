@@ -7,82 +7,60 @@
     android:layout_height="match_parent"
     tools:context="com.example.johncheng.gameassistant.module.main.ui.MainActivity">
 
-<LinearLayout
-    android:id="@+id/llmenu"
-    android:layout_width="match_parent"
-    android:layout_height="65dp"
-    android:orientation="horizontal"
-    android:layout_alignParentBottom="true">
-    <com.example.johncheng.gameassistant.common.widget.BottomMenu
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        app:Text="首页"
-        android:id="@+id/menu_home"
-        android:layout_gravity="center"
-        app:pressPic="@mipmap/icon_home_hover"
-        app:normalPic="@mipmap/icon_home"
-        android:onClick="choose"
-        android:layout_height="70dp"/>
+    <LinearLayout
+        android:id="@+id/llmenu"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.example.johncheng.gameassistant.common.widget.BottomMenu
+            android:id="@+id/menu_home"
+            style="@style/MainActivity5Icons"
+            app:Text="首页"
+            app:normalPic="@mipmap/icon_home"
+            app:pressPic="@mipmap/icon_home_hover"/>
+
         <com.example.johncheng.gameassistant.common.widget.BottomMenu
             android:id="@+id/menu_money"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/MainActivity5Icons"
             app:Text="赚钱"
-            android:onClick="choose"
-            android:layout_gravity="center"
             app:normalPic="@mipmap/ic_menu_03_nor"
-            app:pressPic="@mipmap/ic_menu_03_hl"
-            android:layout_height="70dp">
+            app:pressPic="@mipmap/ic_menu_03_hl"/>
 
-        </com.example.johncheng.gameassistant.common.widget.BottomMenu>
-    <com.example.johncheng.gameassistant.common.widget.BottomMenu
-        android:id="@+id/menu_guess"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <com.example.johncheng.gameassistant.common.widget.BottomMenu
+            android:id="@+id/menu_guess"
+            style="@style/MainActivity5Icons"
             app:Text="竞猜"
-            android:onClick="choose"
-            android:layout_gravity="center"
             app:normalPic="@mipmap/ic_menu_01_nor"
-            app:pressPic="@mipmap/ic_menu_01_hl"
-            android:layout_height="70dp">
+            app:pressPic="@mipmap/ic_menu_01_hl"/>
 
-        </com.example.johncheng.gameassistant.common.widget.BottomMenu>
-    <com.example.johncheng.gameassistant.common.widget.BottomMenu
-        android:id="@+id/menu_shop"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        app:Text="商城"
-        android:onClick="choose"
-        android:layout_gravity="center"
-        app:normalPic="@mipmap/ic_menu_04_nor"
-        app:pressPic="@mipmap/ic_menu_04_hl"
-        android:layout_height="70dp">
+        <com.example.johncheng.gameassistant.common.widget.BottomMenu
+            android:id="@+id/menu_shop"
+            style="@style/MainActivity5Icons"
+            app:Text="商城"
+            app:normalPic="@mipmap/ic_menu_04_nor"
+            app:pressPic="@mipmap/ic_menu_04_hl"/>
 
-    </com.example.johncheng.gameassistant.common.widget.BottomMenu>
-    <com.example.johncheng.gameassistant.common.widget.BottomMenu
-        android:id="@+id/menu_me"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        app:Text="我的"
-        android:onClick="choose"
-        android:layout_gravity="center"
-        app:normalPic="@mipmap/ic_menu_05_nor"
-        app:pressPic="@mipmap/ic_menu_02_hl"
-        android:layout_height="70dp">
+        <com.example.johncheng.gameassistant.common.widget.BottomMenu
+            android:id="@+id/menu_me"
+            style="@style/MainActivity5Icons"
+            app:Text="我的"
+            app:normalPic="@mipmap/ic_menu_05_nor"
+            app:pressPic="@mipmap/ic_menu_02_hl"/>
+    </LinearLayout>
 
-    </com.example.johncheng.gameassistant.common.widget.BottomMenu>
-
-</LinearLayout>
     <FrameLayout
-        android:layout_above="@+id/view"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view"></FrameLayout>
+
     <View
-        android:layout_above="@+id/llmenu"
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:id="@+id/view"
+        android:layout_above="@+id/llmenu"
         android:background="#55000000"/>
 
 </RelativeLayout>

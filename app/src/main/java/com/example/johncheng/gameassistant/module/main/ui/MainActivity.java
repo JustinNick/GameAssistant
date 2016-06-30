@@ -4,7 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.johncheng.gameassistant.R;
 import com.example.johncheng.gameassistant.base.BaseActivity;
@@ -25,6 +27,8 @@ public class MainActivity extends BaseActivity {
     private ShopFragment mshopFragment;
     private MeFragment mmeFragment;
     private Fragment mLastSelFragment;
+    private boolean isFirst=true;
+    private long lastTime;
 
     @Override
     protected int setViewId() {
@@ -122,6 +126,22 @@ public class MainActivity extends BaseActivity {
         transaction.commit();
     }
 
+    public void onBackPressed() {
+        if (isFirst) {
+            Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+            lastTime = System.currentTimeMillis();
+            isFirst = false;
+        } else {
+            long currentTime = System.currentTimeMillis();
+            if (currentTime - lastTime <= 2000) {
+                finish();
+            } else {
+                Toast.makeText(this, "再按一次退出",Toast.LENGTH_SHORT).show();
+                lastTime = System.currentTimeMillis();
+
+            }
+        }
+    }
 }
 
 

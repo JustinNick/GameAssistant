@@ -26,6 +26,13 @@
         </activity>
         <activity android:name=".module.main.ui.LoginActivity">
         </activity>
+        <activity android:name=".module.mygame.ui.MygameActivity">
+            <intent-filter>
+                <action android:name="tianzhundaoMygameactivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
