@@ -26,7 +26,7 @@
           />
   </LinearLayout>
 
-    <include layout="@layout/layout_money_item"/>
+    <include layout="@layout/layout_game_platform"/>
 
     <LinearLayout
         android:layout_marginTop="5dp"

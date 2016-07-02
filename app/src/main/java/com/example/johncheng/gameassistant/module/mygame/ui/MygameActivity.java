@@ -5,13 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.RadioGroup;
 
 import com.example.johncheng.gameassistant.R;
 import com.example.johncheng.gameassistant.base.BaseActivity;
@@ -25,9 +21,9 @@ public class MygameActivity extends BaseActivity implements View.OnClickListener
     private LastgameFragment lastgameFragment;
     private NotplayFragment notplayFragment;
     private ArrayList<Fragment> mlistGames;
-    private ViewPager vpMygames;
-    private View mviewHeader;
+    private ViewPager mvpMygames;
     private ImageView mivMygameBack;
+    private RadioGroup mRGMygame;
 
     @Override
     protected int setViewId() {
@@ -36,8 +32,10 @@ public class MygameActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void findViews() {
-        vpMygames = (ViewPager) findViewById(R.id.vpmygames);
+        mvpMygames = (ViewPager) findViewById(R.id.vpmygames);
         mivMygameBack = (ImageView) findViewById(R.id.iv_mygame_back);
+        mRGMygame = (RadioGroup) findViewById(R.id.rg_mygame);
+
     }
 
     @Override
@@ -53,13 +51,58 @@ public class MygameActivity extends BaseActivity implements View.OnClickListener
         transaction.show(allgameFragment);
         transaction.show(lastgameFragment);
         transaction.show(notplayFragment);
-        vpMygames.setAdapter(new MygameAdapter(getSupportFragmentManager()));
+        mvpMygames.setAdapter(new MygameAdapter(getSupportFragmentManager()));
     }
 
     @Override
     protected void initEvents() {
         mivMygameBack.setOnClickListener(this);
+        mRGMygame.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.rb_allgame:
+                      mvpMygames.setCurrentItem(0);
+                        break;
+                    case R.id.rb_notplay:
+                        mvpMygames.setCurrentItem(1);
+                        break;
+                    case R.id.rb_lastgame:
+                        mvpMygames.setCurrentItem(2);
+                        break;
+                }
+            }
+        });
+
+        mvpMygames.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                switch (position){
+                    case 0:
+                        mRGMygame.check(R.id.rb_allgame);
+                        break;
+                    case 1:
+                        mRGMygame.check(R.id.rb_notplay);
+                        break;
+                    case 2:
+                        mRGMygame.check(R.id.rb_lastgame);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override

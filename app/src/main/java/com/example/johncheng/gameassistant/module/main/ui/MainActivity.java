@@ -37,7 +37,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void findViews() {
-        mLastSelMenu = (BottomMenu) findViewById(R.id.menu_home);
+        mLastSelMenu = (BottomMenu) findViewById(R.id.menu_money);
     }
 
     @Override
@@ -49,18 +49,18 @@ public class MainActivity extends BaseActivity {
         mguessFragment = new GuessFragment();
         mshopFragment = new ShopFragment();
         mmeFragment = new MeFragment();
-        mLastSelFragment = mhomeFragment;
+        mLastSelFragment = mmoneyFragment;
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.fragment_container, mmoneyFragment);
-        transaction.hide(mmoneyFragment);
+        transaction.add(R.id.fragment_container, mhomeFragment);
+        transaction.hide(mhomeFragment);
         transaction.add(R.id.fragment_container, mguessFragment);
         transaction.hide(mguessFragment);
         transaction.add(R.id.fragment_container, mshopFragment);
         transaction.hide(mshopFragment);
         transaction.add(R.id.fragment_container, mmeFragment);
         transaction.hide(mmeFragment);
-        transaction.add(R.id.fragment_container, mhomeFragment);
+        transaction.add(R.id.fragment_container, mmoneyFragment);
         transaction.commit();
 
     }
@@ -75,56 +75,56 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void choose(View view) {
-        BottomMenu bottomMenu = (BottomMenu) view;
-        bottomMenu.onSelect();
-        if (!bottomMenu.equals(mLastSelMenu)) {
-            mLastSelMenu.unSelect();
-        }
-        mLastSelMenu = bottomMenu;
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        switch (view.getId()) {
-            case R.id.menu_home:
-                if (!(mLastSelFragment instanceof HomeFragment)) {
-                    transaction.hide(mLastSelFragment);
-                }
-                mLastSelFragment = mhomeFragment;
-                transaction.show(mhomeFragment);
-                break;
-            case R.id.menu_money:
-                if (!(mLastSelFragment instanceof MoneyFragment)) {
-                    transaction.hide(mLastSelFragment);
-                }
-                mLastSelFragment = mmoneyFragment;
-                transaction.show(mmoneyFragment);
-                mmoneyFragment.showLoadDialog();
-                break;
-            case R.id.menu_guess:
-                if (!(mLastSelFragment instanceof GuessFragment)) {
-                    transaction.hide(mLastSelFragment);
-                }
-                mLastSelFragment = mguessFragment;
-                transaction.show(mguessFragment);
-                break;
-            case R.id.menu_shop:
-                if (!(mLastSelFragment instanceof ShopFragment)) {
-                    transaction.hide(mLastSelFragment);
-                }
-                mLastSelFragment = mshopFragment;
-                transaction.show(mshopFragment);
-                break;
-            case R.id.menu_me:
-                if (!(mLastSelFragment instanceof MeFragment)) {
-                    transaction.hide(mLastSelFragment);
-                }
-                mLastSelFragment = mmeFragment;
-                transaction.show(mmeFragment);
-                break;
-
-        }
-        transaction.commit();
-    }
+//    public void choose(View view) {
+//        BottomMenu bottomMenu = (BottomMenu) view;
+//        bottomMenu.onSelect();
+//        if (!bottomMenu.equals(mLastSelMenu)) {
+//            mLastSelMenu.unSelect();
+//        }
+//        mLastSelMenu = bottomMenu;
+//
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        switch (view.getId()) {
+//            case R.id.menu_home:
+//                if (!(mLastSelFragment instanceof HomeFragment)) {
+//                    transaction.hide(mLastSelFragment);
+//                }
+//                mLastSelFragment = mhomeFragment;
+//                transaction.show(mhomeFragment);
+//                break;
+//            case R.id.menu_money:
+//                if (!(mLastSelFragment instanceof MoneyFragment)) {
+//                    transaction.hide(mLastSelFragment);
+//                }
+//                mLastSelFragment = mmoneyFragment;
+//                transaction.show(mmoneyFragment);
+//                mmoneyFragment.showLoadDialog();
+//                break;
+//            case R.id.menu_guess:
+//                if (!(mLastSelFragment instanceof GuessFragment)) {
+//                    transaction.hide(mLastSelFragment);
+//                }
+//                mLastSelFragment = mguessFragment;
+//                transaction.show(mguessFragment);
+//                break;
+//            case R.id.menu_shop:
+//                if (!(mLastSelFragment instanceof ShopFragment)) {
+//                    transaction.hide(mLastSelFragment);
+//                }
+//                mLastSelFragment = mshopFragment;
+//                transaction.show(mshopFragment);
+//                break;
+//            case R.id.menu_me:
+//                if (!(mLastSelFragment instanceof MeFragment)) {
+//                    transaction.hide(mLastSelFragment);
+//                }
+//                mLastSelFragment = mmeFragment;
+//                transaction.show(mmeFragment);
+//                break;
+//
+//        }
+//        transaction.commit();
+//    }
 
     public void onBackPressed() {
         if (isFirst) {

@@ -46,23 +46,28 @@
     </LinearLayout>
 
     <RadioGroup
+        android:id="@+id/rg_mygame"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/rb_allgame"
             android:layout_marginLeft="15dp"
             style="@style/MygameRatioButton"
+            android:checked="true"
             android:text="全部游戏"
             />
         <RadioButton
+            android:id="@+id/rb_notplay"
             style="@style/MygameRatioButton"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:text="未试玩"
             />
         <RadioButton
+            android:id="@+id/rb_lastgame"
             style="@style/MygameRatioButton"
             android:layout_marginRight="15dp"
             android:text="已试玩"
